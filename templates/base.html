@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personal Technology</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+      :root {
+        --success-color: #28a745;
+        --danger-color: #dc3545;
+        --warning-color: #ffc107;
+        --info-color: #17a2b8;
+        --light-color: #f8f9fa;
+        --dark-color: #343a40;
+      }
+
+      .theme-blue {
+        --primary-color: #007bff;
+      }
+      .theme-red {
+        --primary-color: #dc3545;
+      }
+      .theme-green {
+        --primary-color: #28a745;
+      }
+      .theme-purple {
+        --primary-color: #6f42c1;
+      }
+      .theme-orange {
+        --primary-color: #fd7e14;
+      }
+      .theme-teal {
+        --primary-color: #20c997;
+      }
+      .theme-dark {
+        --primary-color: #343a40;
+        --dark-color: #212529;
+      }
+
+      body {
+        background-color: var(--light-color);
+      }
+      .navbar {
+        background-color: var(--primary-color) !important;
+      }
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+      .text-primary {
+        color: var(--primary-color) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+          <img src="{% static 'icno_tras.png' %}" alt="Personal Technology" height="40" class="me-2 rounded" />
+          <span class="fw-bold">Personal Technology</span>
+        </a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menú</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'home' %}"><i class="bi bi-house-door me-2"></i>Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="servicesDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  <i class="bi bi-gear me-2"></i>Servicios
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'client_list' %}"
+                      ><i class="bi bi-people-fill me-2"></i>Clientes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'service_list' %}"
+                      ><i class="bi bi-tools me-2"></i>Servicios</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'report_list' %}"
+                      ><i class="bi bi-file-earmark-text me-2"></i>Reportes Técnicos</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center">
+              {% if user.is_authenticated %}
+              <div class="dropdown">
+                <button
+                  class="btn btn-outline-light dropdown-toggle d-flex align-items-center"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                >
+                  <img
+                    src="https://via.placeholder.com/32x32/007bff/ffffff?text={{ user.get_full_name|default:user.username|slice:':1'|upper }}"
+                    alt="Avatar"
+                    class="rounded-circle me-2"
+                    width="32"
+                    height="32"
+                  />
+                  <span>{{ user.get_full_name|default:user.username }}</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Perfil</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#themeModal"
+                      ><i class="bi bi-palette me-2"></i>Temas</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'logout' %}"
+                      ><i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              {% else %}
+              <a href="{% url 'login' %}" class="btn btn-outline-light me-2"
+                ><i class="bi bi-box-arrow-in-right me-1"></i>Iniciar Sesión</a
+              >
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">{% block content %}{% endblock %}</div>
+
+    <footer class="bg-dark text-white py-3 mt-5">
+      <div class="container text-center">
+        <p>&copy; 2025 Personal Technology. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Theme Selector Modal -->
+    <div class="modal fade" id="themeModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="bi bi-palette me-2"></i>Seleccionar Tema</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-6">
+                <button class="btn w-100 p-3 theme-option" data-theme="blue">
+                  <div class="bg-primary rounded mb-2" style="height: 40px"></div>
+                  Azul
+                </button>
+              </div>
+              <div class="col-6">
+                <button class="btn w-100 p-3 theme-option" data-theme="red">
+                  <div class="bg-danger rounded mb-2" style="height: 40px"></div>
+                  Rojo
+                </button>
+              </div>
+              <div class="col-6">
+                <button class="btn w-100 p-3 theme-option" data-theme="green">
+                  <div class="bg-success rounded mb-2" style="height: 40px"></div>
+                  Verde
+                </button>
+              </div>
+              <div class="col-6">
+                <button class="btn w-100 p-3 theme-option" data-theme="purple">
+                  <div style="background-color: #6f42c1; height: 40px" class="rounded mb-2"></div>
+                  Púrpura
+                </button>
+              </div>
+              <div class="col-6">
+                <button class="btn w-100 p-3 theme-option" data-theme="orange">
+                  <div style="background-color: #fd7e14; height: 40px" class="rounded mb-2"></div>
+                  Naranja
+                </button>
+              </div>
+              <div class="col-6">
+                <button class="btn w-100 p-3 theme-option" data-theme="teal">
+                  <div style="background-color: #20c997; height: 40px" class="rounded mb-2"></div>
+                  Verde Azulado
+                </button>
+              </div>
+              <div class="col-12">
+                <button class="btn w-100 p-3 theme-option" data-theme="dark">
+                  <div class="bg-dark rounded mb-2" style="height: 40px"></div>
+                  Oscuro
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Theme switching functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeOptions = document.querySelectorAll(".theme-option");
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("selectedTheme") || "blue";
+        applyTheme(savedTheme);
+
+        themeOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            const theme = this.getAttribute("data-theme");
+            applyTheme(theme);
+            localStorage.setItem("selectedTheme", theme);
+            const modal = bootstrap.Modal.getInstance(document.getElementById("themeModal"));
+            modal.hide();
+          });
+        });
+
+        function applyTheme(theme) {
+          // Remove all theme classes
+          body.classList.remove(
+            "theme-blue",
+            "theme-red",
+            "theme-green",
+            "theme-purple",
+            "theme-orange",
+            "theme-teal",
+            "theme-dark"
+          );
+          // Add selected theme
+          body.classList.add(`theme-${theme}`);
+        }
+      });
+    </script>
+  </body>
+</html>

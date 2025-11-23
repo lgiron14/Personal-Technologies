@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Reportes Técnicos{% endblock %}
+
+{% block content %}
+<h1>Lista de Reportes Técnicos</h1>
+<a href="{% url 'report_create' %}" class="btn btn-primary mb-3"><i class="bi bi-plus-circle me-2"></i>Crear Reporte</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Servicio</th>
+            <th>Técnico</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.service.title }}</td>
+            <td>{% if report.technician %}{{ report.technician.get_full_name|default:report.technician.username }}{% else %}N/A{% endif %}</td>
+            <td>{{ report.date|date:"d/m/Y" }}</td>
+            <td>{{ report.get_status_display }}</td>
+            <td>
+                <a href="{% url 'report_update' report.pk %}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                <a href="{% url 'report_delete' report.pk %}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No hay reportes registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

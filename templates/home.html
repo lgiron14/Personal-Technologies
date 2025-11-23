@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Personal Technology{% endblock %}
+
+{% block content %}
+<header class="bg-light py-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1 class="display-4">Bienvenido a Personal Technology</h1>
+            <p class="lead">Expertos en servicios de TI: asesoría, diseño web, configuración de servidores y mantenimiento.</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Solicitar Servicio</a>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://via.placeholder.com/500x300" alt="Servicios de TI" class="img-fluid rounded">
+        </div>
+    </div>
+</header>
+
+<section id="services" class="py-5">
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Asesoría en TI</h5>
+                    <p class="card-text">Consultoría especializada para optimizar sus sistemas tecnológicos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Diseño Web</h5>
+                    <p class="card-text">Sitios web modernos y responsivos para su negocio.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Mantenimiento</h5>
+                    <p class="card-text">Servicio continuo de mantenimiento y soporte técnico.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="bg-light py-5">
+    <h2 class="text-center mb-4">Contáctenos</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
