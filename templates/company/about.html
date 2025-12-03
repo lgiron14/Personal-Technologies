@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5 animate__animated animate__fadeIn">
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-3">Nuestra Empresa</h1>
+            <p class="lead text-muted">Somos Personal Technology, una empresa paisa dedicada a brindar soluciones
+                tecnológicas integrales para empresas y particulares en Medellín y el Valle de Aburrá.</p>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" alt="Oficina"
+                class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-6 animate__animated animate__fadeInLeft">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 me-3">
+                            <i class="bi bi-bullseye text-primary fs-3"></i>
+                        </div>
+                        <h3 class="mb-0">Misión</h3>
+                    </div>
+                    <p class="text-muted">Proporcionar soluciones tecnológicas innovadoras y personalizadas que impulsen
+                        el crecimiento y la eficiencia de nuestros clientes, con un servicio cercano y profesional que
+                        nos caracteriza como paisas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 animate__animated animate__fadeInRight">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-success bg-opacity-10 rounded-circle p-3 me-3">
+                            <i class="bi bi-eye text-success fs-3"></i>
+                        </div>
+                        <h3 class="mb-0">Visión</h3>
+                    </div>
+                    <p class="text-muted">Ser la empresa líder en servicios tecnológicos en Antioquia, reconocida por
+                        nuestra excelencia, innovación y compromiso con la transformación digital de las empresas
+                        colombianas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">Nuestros Valores</h2>
+        <div class="row g-4">
+            <div class="col-md-4 animate__animated animate__fadeInUp">
+                <div class="text-center">
+                    <div class="bg-primary bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="bi bi-shield-check text-primary fs-1"></i>
+                    </div>
+                    <h4>Confianza</h4>
+                    <p class="text-muted">Construimos relaciones duraderas basadas en la transparencia y el
+                        cumplimiento.</p>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                <div class="text-center">
+                    <div class="bg-success bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="bi bi-lightbulb text-success fs-1"></i>
+                    </div>
+                    <h4>Innovación</h4>
+                    <p class="text-muted">Nos mantenemos a la vanguardia tecnológica para ofrecer las mejores
+                        soluciones.</p>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="text-center">
+                    <div class="bg-warning bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="bi bi-heart text-warning fs-1"></i>
+                    </div>
+                    <h4>Compromiso</h4>
+                    <p class="text-muted">Nos dedicamos al 100% a la satisfacción y éxito de nuestros clientes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Overview -->
+    <div class="bg-light rounded p-5 mb-5">
+        <h2 class="text-center mb-4">¿Qué Hacemos?</h2>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                    <div>
+                        <h5>Soporte Técnico Especializado</h5>
+                        <p class="text-muted mb-0">Mantenimiento preventivo y correctivo de equipos de cómputo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                    <div>
+                        <h5>Desarrollo de Software</h5>
+                        <p class="text-muted mb-0">Soluciones personalizadas para tu negocio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                    <div>
+                        <h5>Consultoría TI</h5>
+                        <p class="text-muted mb-0">Asesoría en infraestructura y transformación digital.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                    <div>
+                        <h5>Redes y Comunicaciones</h5>
+                        <p class="text-muted mb-0">Diseño e implementación de redes empresariales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

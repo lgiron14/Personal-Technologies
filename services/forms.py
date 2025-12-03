@@ -15,6 +15,7 @@ class ServiceForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'description': forms.Textarea(attrs={'rows': 4}),
+            'service_date': forms.DateInput(attrs={'type': 'date'}),
         }
 
 class TechnicalReportForm(forms.ModelForm):

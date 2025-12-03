@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5 animate__animated animate__fadeIn">
+        <div class="col-lg-6">
+            <span class="badge bg-primary bg-opacity-10 text-primary mb-3">
+                <i class="bi bi-code-slash me-2"></i>Desarrollo de Software
+            </span>
+            <h1 class="display-4 fw-bold mb-3">Soluciones de Software a Medida</h1>
+            <p class="lead text-muted mb-4">Desarrollamos aplicaciones web y móviles personalizadas que transforman tu
+                negocio.</p>
+            <div class="d-flex gap-3">
+                <a href="#contacto" class="btn btn-primary btn-lg">
+                    <i class="bi bi-rocket me-2"></i>Iniciar Proyecto
+                </a>
+                <a href="#tecnologias" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-stack me-2"></i>Tecnologías
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" alt="Desarrollo de Software"
+                class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- Project Types -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <div class="card-body p-4">
+                    <div class="bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                        <i class="bi bi-globe text-primary fs-1"></i>
+                    </div>
+                    <h5>Aplicaciones Web</h5>
+                    <p class="text-muted small">Sistemas web responsivos y escalables</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <div class="card-body p-4">
+                    <div class="bg-success bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                        <i class="bi bi-phone text-success fs-1"></i>
+                    </div>
+                    <h5>Apps Móviles</h5>
+                    <p class="text-muted small">Android e iOS nativos o híbridos</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <div class="card-body p-4">
+                    <div class="bg-warning bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                        <i class="bi bi-cart text-warning fs-1"></i>
+                    </div>
+                    <h5>E-commerce</h5>
+                    <p class="text-muted small">Tiendas online completas</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <div class="card-body p-4">
+                    <div class="bg-info bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                        <i class="bi bi-diagram-3 text-info fs-1"></i>
+                    </div>
+                    <h5>APIs REST</h5>
+                    <p class="text-muted small">Integración de sistemas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technologies -->
+    <div id="tecnologias" class="mb-5">
+        <h2 class="text-center mb-4">Tecnologías que Dominamos</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="mb-3"><i class="bi bi-laptop text-primary me-2"></i>Frontend</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary">React</span>
+                            <span class="badge bg-primary">Vue.js</span>
+                            <span class="badge bg-primary">Angular</span>
+                            <span class="badge bg-primary">Bootstrap</span>
+                            <span class="badge bg-primary">Tailwind CSS</span>
+                            <span class="badge bg-primary">JavaScript</span>
+                            <span class="badge bg-primary">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="mb-3"><i class="bi bi-server text-success me-2"></i>Backend</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-success">Python/Django</span>
+                            <span class="badge bg-success">Node.js</span>
+                            <span class="badge bg-success">PHP/Laravel</span>
+                            <span class="badge bg-success">PostgreSQL</span>
+                            <span class="badge bg-success">MySQL</span>
+                            <span class="badge bg-success">MongoDB</span>
+                            <span class="badge bg-success">Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">Nuestro Proceso de Desarrollo</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <span class="fs-4 fw-bold">1</span>
+                    </div>
+                    <h5>Análisis</h5>
+                    <p class="text-muted small">Entendemos tus necesidades y objetivos</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <span class="fs-4 fw-bold">2</span>
+                    </div>
+                    <h5>Diseño</h5>
+                    <p class="text-muted small">Creamos prototipos y arquitectura</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <span class="fs-4 fw-bold">3</span>
+                    </div>
+                    <h5>Desarrollo</h5>
+                    <p class="text-muted small">Programación con metodologías ágiles</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <span class="fs-4 fw-bold">4</span>
+                    </div>
+                    <h5>Entrega</h5>
+                    <p class="text-muted small">Despliegue y capacitación</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="bg-light rounded p-5 mb-5">
+        <h3 class="text-center mb-4">¿Por Qué Elegirnos?</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Código Limpio:</strong> Seguimos las mejores prácticas de programación
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Escalabilidad:</strong> Sistemas preparados para crecer con tu negocio
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Seguridad:</strong> Protección de datos y cumplimiento normativo
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Soporte Continuo:</strong> Mantenimiento y actualizaciones incluidas
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Documentación:</strong> Código y procesos completamente documentados
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Entrega a Tiempo:</strong> Cumplimos con los plazos acordados
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div id="contacto" class="text-center p-5 bg-primary bg-opacity-10 rounded mb-5">
+        <h3 class="mb-3">¿Tienes un Proyecto en Mente?</h3>
+        <p class="text-muted mb-4">Conversemos sobre cómo podemos ayudarte a hacerlo realidad</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="tel:+573127948493" class="btn btn-primary btn-lg">
+                <i class="bi bi-telephone me-2"></i>312 794 84 93
+            </a>
+            <a href="mailto:contacto@personaltech.com.co" class="btn btn-outline-primary btn-lg">
+                <i class="bi bi-envelope me-2"></i>Solicitar Cotización
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

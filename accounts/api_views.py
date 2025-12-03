@@ -1,8 +1,10 @@
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from django.contrib.auth.models import User
-from .serializers import UserSerializer
+from .serializers import UserSerializer, UserRoleUpdateSerializer
 from .models import Profile
+from drf_spectacular.utils import extend_schema
+
 
 
 class IsAdmin(permissions.BasePermission):
@@ -18,6 +20,7 @@ class IsAdmin(permissions.BasePermission):
             return False
 
 
+@extend_schema(tags=['Users'], summary='List all users')
 class UserListAPIView(generics.ListAPIView):
     """List all users with their roles. Only accessible to admins."""
 
@@ -26,6 +29,7 @@ class UserListAPIView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
 
+@extend_schema(tags=['Users'], summary='Update user role', request=UserRoleUpdateSerializer)
 class UserRoleUpdateAPIView(generics.UpdateAPIView):
     """Update the role of a user. Only admins can perform this action."""
 

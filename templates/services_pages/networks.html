@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5 animate__animated animate__fadeIn">
+        <div class="col-lg-6">
+            <span class="badge bg-primary bg-opacity-10 text-primary mb-3">
+                <i class="bi bi-diagram-3 me-2"></i>Redes y Comunicaciones
+            </span>
+            <h1 class="display-4 fw-bold mb-3">Infraestructura de Red Empresarial</h1>
+            <p class="lead text-muted mb-4">Diseño, implementación y mantenimiento de redes robustas y seguras para tu
+                empresa.</p>
+            <a href="#contacto" class="btn btn-primary btn-lg">
+                <i class="bi bi-diagram-2 me-2"></i>Solicitar Asesoría
+            </a>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800" alt="Redes"
+                class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="bg-primary bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                        <i class="bi bi-router text-primary fs-2"></i>
+                    </div>
+                    <h5>Diseño de Redes</h5>
+                    <p class="text-muted">Arquitectura de red LAN/WAN adaptada a tus necesidades. Cableado estructurado
+                        categoría 6 y fibra óptica.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="bg-success bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                        <i class="bi bi-wifi text-success fs-2"></i>
+                    </div>
+                    <h5>Redes Inalámbricas</h5>
+                    <p class="text-muted">Instalación de puntos de acceso WiFi empresariales. Cobertura total y gestión
+                        centralizada.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="bg-warning bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                        <i class="bi bi-telephone text-warning fs-2"></i>
+                    </div>
+                    <h5>VoIP y Telefonía</h5>
+                    <p class="text-muted">Sistemas de telefonía IP para reducir costos. Centralitas virtuales y
+                        extensiones ilimitadas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="bg-info bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                        <i class="bi bi-camera-video text-info fs-2"></i>
+                    </div>
+                    <h5>Videoconferencia</h5>
+                    <p class="text-muted">Salas de reuniones equipadas con sistemas de videoconferencia profesionales.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="bg-danger bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                        <i class="bi bi-hdd-network text-danger fs-2"></i>
+                    </div>
+                    <h5>Servidores</h5>
+                    <p class="text-muted">Configuración de servidores físicos y virtuales. Active Directory, DNS, DHCP.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="bg-secondary bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                        <i class="bi bi-speedometer2 text-secondary fs-2"></i>
+                    </div>
+                    <h5>Monitoreo 24/7</h5>
+                    <p class="text-muted">Supervisión constante de tu infraestructura. Alertas proactivas ante fallas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="bg-light rounded p-5 mb-5">
+        <h3 class="mb-4">Soluciones Completas de Red</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Switches administrables y no administrables
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Routers empresariales con VPN
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Firewalls de nueva generación
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Balanceadores de carga
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        VLANs y segmentación de red
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        QoS para priorización de tráfico
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Redundancia y alta disponibilidad
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Documentación completa de red
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div id="contacto" class="text-center p-5 bg-primary bg-opacity-10 rounded mb-5">
+        <h3 class="mb-3">¿Necesitas Mejorar tu Infraestructura de Red?</h3>
+        <p class="text-muted mb-4">Agenda una asesoría gratuita con nuestros expertos</p>
+        <a href="tel:+573127948493" class="btn btn-primary btn-lg">
+            <i class="bi bi-telephone me-2"></i>312 794 84 93
+        </a>
+    </div>
+</div>
+{% endblock %}

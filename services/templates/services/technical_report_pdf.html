@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Informe Técnico - {{ report.service.id }}</title>
+    {% load static %}
+    <style>
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-size: 10px;
+            color: #000;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 5px;
+        }
+
+        td {
+            padding: 4px;
+            vertical-align: middle;
+        }
+
+        .header-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .section-header {
+            background-color: #3949ab;
+            /* Softer Blue */
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            text-transform: uppercase;
+            font-size: 11px;
+            border: 1px solid #3949ab;
+        }
+
+        .input-field {
+            border: 1px solid #000;
+            height: 18px;
+            background-color: #e8eaf6;
+            /* Light blue tint */
+        }
+
+        .checkbox-container {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .checkbox-box {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #000;
+            margin-right: 3px;
+        }
+
+        .table-bordered td,
+        .table-bordered th {
+            border: 1px solid #000;
+        }
+
+        .table-header {
+            background-color: #3949ab;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .lined-area {
+            border: 1px solid #000;
+            height: 300px;
+            position: relative;
+        }
+
+        .line {
+            border-bottom: 1px solid #ccc;
+            height: 20px;
+            width: 100%;
+        }
+
+        .footer-info {
+            text-align: center;
+            font-size: 9px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .logo-img {
+            height: 60px;
+        }
+
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <table>
+        <tr>
+            <td width="20%" align="center">
+                <img src="{% static 'icno_tras.png' %}" class="logo-img" alt="Logo">
+                <div style="font-size: 9px; font-weight: bold; margin-top: 5px;">PERSONAL TECHNOLOGY</div>
+            </td>
+            <td width="50%" align="center" valign="middle">
+                <div class="header-title">INFORME TECNICO</div>
+            </td>
+            <td width="30%" valign="top">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="section-header" style="text-align: center; width: 30%;">Fecha</td>
+                        <td style="border: 1px solid #000; text-align: center;">{{ report.date|date:"d/m/Y" }}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Client Info -->
+    <table style="margin-top: 10px;">
+        <tr>
+            <td class="section-header" width="15%">Cliente</td>
+            <td style="border: 1px solid #000;">{{ report.service.client.name }}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="height: 5px;"></td>
+        </tr>
+        <tr>
+            <td class="section-header" width="15%">Equipo / Modelo</td>
+            <td style="border: 1px solid #000;">
+                {{ report.service.title }}
+            </td>
+        </tr>
+    </table>
+
+    <!-- Service Type -->
+    <div class="section-header" style="margin-top: 10px;">TIPO DE SERVICIO</div>
+    <table style="border: 1px solid #000; margin-top: 2px;">
+        <tr>
+            <td>
+                <div class="checkbox-container">
+                    <div class="checkbox-box"></div> Revisión/diagnostico fisico
+                </div>
+            </td>
+            <td>
+                <div class="checkbox-container">
+                    <div class="checkbox-box"></div> Configuración e instalación
+                </div>
+            </td>
+            <td>
+                <div class="checkbox-container">
+                    <div class="checkbox-box"></div> Diseño Web
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox-container">
+                    <div class="checkbox-box"></div> Asesoria en TI
+                </div>
+            </td>
+            <td>
+                <div class="checkbox-container">
+                    <div class="checkbox-box"></div> Mantenimiento de equipos
+                </div>
+            </td>
+            <td>
+                <div class="checkbox-container">
+                    <div class="checkbox-box"></div> Alta disponibilidad
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Client Type -->
+    <div class="section-header" style="margin-top: 5px;">TIPO CLIENTE</div>
+    <table style="border: 1px solid #000; margin-top: 2px;">
+        <tr>
+            <td>
+                <div class="checkbox-container">
+                    <div class="checkbox-box"></div> CONTRATO TI
+                </div>
+            </td>
+            <td>
+                <div class="checkbox-container">
+                    <div class="checkbox-box"></div> SERVICIO
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Products Table -->
+    <div class="section-header" style="margin-top: 10px;">PRODUCTOS ENTREGADOS Y/O RECIBIDOS</div>
+    <table class="table-bordered" cellspacing="0" cellpadding="2" style="margin-top: 2px;">
+        <thead>
+            <tr>
+                <th class="table-header" width="15%">Cantidad</th>
+                <th class="table-header" width="60%">Descripción</th>
+                <th class="table-header" width="25%">Num Serie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Empty rows as in the image -->
+            {% for i in "123456" %}
+            <tr>
+                <td style="height: 15px;">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Diagnosis/Result -->
+    <div class="section-header" style="margin-top: 10px;">DIAGNOSTICO/RESULTADO/SERVICIO</div>
+    <div style="border: 1px solid #000; margin-top: 2px; padding: 5px; min-height: 300px;">
+        <div style="font-weight: bold; margin-bottom: 5px;">Diagnóstico:</div>
+        {{ report.diagnosis|linebreaksbr }}
+        <br><br>
+        <div style="font-weight: bold; margin-bottom: 5px;">Intervenciones:</div>
+        {{ report.interventions|linebreaksbr }}
+        <br><br>
+        <div style="font-weight: bold; margin-bottom: 5px;">Recomendaciones:</div>
+        {{ report.recommendations|default:"Ninguna"|linebreaksbr }}
+
+        <!-- Lines for visual effect (optional, or just whitespace) -->
+        {% for i in "1234567890" %}
+        <div style="border-bottom: 1px solid #eee; height: 20px;"></div>
+        {% endfor %}
+    </div>
+
+    <!-- Signatures & Footer -->
+    <table style="margin-top: 30px;">
+        <tr>
+            <td width="40%" align="center" valign="bottom">
+                {% if report.signature_image %}
+                <img src="{{ report.signature_image.path }}" style="max-height: 50px;" alt="Firma"><br>
+                {% else %}
+                <br><br><br>
+                {% endif %}
+                <div style="font-weight: bold;">Julio César Girón David</div>
+                <div style="font-size: 9px;">NIT 71526869</div>
+                <div style="font-weight: bold; margin-top: 5px;">JULIO CÉSAR GIRON D.</div>
+            </td>
+            <td width="20%"></td>
+            <td width="40%" align="center" valign="bottom">
+                <div class="signature-line"></div>
+                <div style="font-weight: bold;">CLIENTE</div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="footer-info">
+        <div>Celular: 312 794 84 93</div>
+        <div>Email: contacto@personaltech.com.co</div>
+        <div>www.personaltech.com.co</div>
+        <div>Medellín, Colombia</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,30 +1,55 @@
-{% extends 'base.html' %} {% block content %}
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <h3 class="text-center mb-4">Iniciar sesión</h3>
-      <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <div class="mb-3">
-          <label for="id_username" class="form-label">Usuario</label>
-          <input
-            type="text"
-            name="username"
-            autofocus
-            autocapitalize="off"
-            maxlength="150"
-            class="form-control"
-            id="id_username"
-          />
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Iniciar Sesión - Personal Technology{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="col-lg-10">
+      <div class="card border-0 shadow-lg rounded-4 overflow-hidden animate__animated animate__fadeIn">
+        <div class="row g-0">
+          <!-- Left Side: Image/Branding -->
+          <div class="col-lg-6 d-none d-lg-block bg-primary position-relative">
+            <img src="https://img.freepik.com/free-vector/secure-login-concept-illustration_114360-4582.jpg" alt="Login"
+              class="w-100 h-100 object-fit-cover" style="opacity: 0.8; mix-blend-mode: multiply;">
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white p-5"
+              style="background: rgba(0,0,0,0.3);">
+              <h2 class="fw-bold mb-3">Bienvenido de nuevo</h2>
+              <p class="text-center lead mb-0">Accede a tu panel de control para gestionar servicios y reportes.</p>
+            </div>
+          </div>
+
+          <!-- Right Side: Login Form -->
+          <div class="col-lg-6 bg-white p-5">
+            <div class="text-center mb-4">
+              <div
+                class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                style="width: 60px; height: 60px;">
+                <i class="bi bi-person-lock fs-2"></i>
+              </div>
+              <h3 class="fw-bold text-primary">Iniciar Sesión</h3>
+              <p class="text-muted">Ingresa tus credenciales para continuar</p>
+            </div>
+
+            <form method="post" class="needs-validation">
+              {% csrf_token %}
+              {{ form|crispy }}
+
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-primary btn-lg fw-bold">
+                  <i class="bi bi-box-arrow-in-right me-2"></i>Entrar
+                </button>
+              </div>
+            </form>
+
+            <div class="text-center mt-4">
+              <a href="#" class="text-decoration-none text-muted small">¿Olvidaste tu contraseña?</a>
+            </div>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="id_password" class="form-label">Contraseña</label>
-          <input type="password" name="password" class="form-control" id="id_password" />
-        </div>
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary">Entrar</button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>

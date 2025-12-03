@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5 animate__animated animate__fadeIn">
+        <div class="col-lg-6">
+            <span class="badge bg-primary bg-opacity-10 text-primary mb-3">
+                <i class="bi bi-headset me-2"></i>Consultoría TI
+            </span>
+            <h1 class="display-4 fw-bold mb-3">Asesoría Tecnológica Estratégica</h1>
+            <p class="lead text-muted mb-4">Te ayudamos a tomar las mejores decisiones tecnológicas para impulsar tu
+                negocio.</p>
+            <a href="#contacto" class="btn btn-primary btn-lg">
+                <i class="bi bi-calendar-check me-2"></i>Agendar Consultoría
+            </a>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" alt="Consultoría"
+                class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">Áreas de Consultoría</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-primary bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                            <i class="bi bi-diagram-3 text-primary fs-2"></i>
+                        </div>
+                        <h5>Planificación Estratégica TI</h5>
+                        <p class="text-muted">Definimos la hoja de ruta tecnológica alineada con tus objetivos de
+                            negocio. Análisis de madurez digital y roadmap de implementación.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-success bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                            <i class="bi bi-graph-up-arrow text-success fs-2"></i>
+                        </div>
+                        <h5>Transformación Digital</h5>
+                        <p class="text-muted">Guiamos tu empresa en el proceso de digitalización. Automatización de
+                            procesos, adopción de nuevas tecnologías.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-warning bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                            <i class="bi bi-cash-coin text-warning fs-2"></i>
+                        </div>
+                        <h5>Optimización de Costos TI</h5>
+                        <p class="text-muted">Análisis de gastos tecnológicos y oportunidades de ahorro. Renegociación
+                            de contratos, consolidación de proveedores.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-info bg-opacity-10 rounded p-3 d-inline-block mb-3">
+                            <i class="bi bi-clipboard-data text-info fs-2"></i>
+                        </div>
+                        <h5>Auditoría de Infraestructura</h5>
+                        <p class="text-muted">Evaluación completa de tu infraestructura tecnológica. Identificación de
+                            riesgos y oportunidades de mejora.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process -->
+    <div class="bg-light rounded p-5 mb-5">
+        <h3 class="mb-4">Nuestro Proceso de Consultoría</h3>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <i class="bi bi-search fs-4"></i>
+                    </div>
+                    <h6>1. Diagnóstico</h6>
+                    <p class="text-muted small">Evaluamos tu situación actual</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <i class="bi bi-lightbulb fs-4"></i>
+                    </div>
+                    <h6>2. Análisis</h6>
+                    <p class="text-muted small">Identificamos oportunidades</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <i class="bi bi-file-text fs-4"></i>
+                    </div>
+                    <h6>3. Propuesta</h6>
+                    <p class="text-muted small">Presentamos recomendaciones</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <i class="bi bi-check-circle fs-4"></i>
+                    </div>
+                    <h6>4. Implementación</h6>
+                    <p class="text-muted small">Acompañamos la ejecución</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits -->
+    <div class="mb-5">
+        <h3 class="text-center mb-4">¿Por Qué Contratar Consultoría TI?</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Visión Externa:</strong> Perspectiva objetiva de expertos
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Mejores Prácticas:</strong> Experiencia en múltiples industrias
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Ahorro de Tiempo:</strong> Decisiones más rápidas y acertadas
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>ROI Medible:</strong> Inversiones tecnológicas justificadas
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Reducción de Riesgos:</strong> Evita errores costosos
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Ventaja Competitiva:</strong> Tecnología como diferenciador
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div id="contacto" class="text-center p-5 bg-primary bg-opacity-10 rounded mb-5">
+        <h3 class="mb-3">¿Necesitas Asesoría Tecnológica?</h3>
+        <p class="text-muted mb-4">Primera consultoría gratuita de 1 hora</p>
+        <a href="tel:+573127948493" class="btn btn-primary btn-lg">
+            <i class="bi bi-telephone me-2"></i>312 794 84 93
+        </a>
+    </div>
+</div>
+{% endblock %}

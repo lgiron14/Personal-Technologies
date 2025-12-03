@@ -3,10 +3,32 @@
 {% block title %}Eliminar Cliente{% endblock %}
 
 {% block content %}
-<h1>¿Estás seguro de que quieres eliminar al cliente "{{ client.name }}"?</h1>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Eliminar</button>
-    <a href="{% url 'client_list' %}" class="btn btn-secondary">Cancelar</a>
-</form>
+<div class="row justify-content-center animate__animated animate__zoomIn">
+    <div class="col-md-6 col-lg-5">
+        <div class="card border-0 shadow-lg rounded-4 text-center p-4">
+            <div class="card-body">
+                <div class="mb-4 text-danger">
+                    <i class="bi bi-exclamation-circle display-1"></i>
+                </div>
+                <h3 class="fw-bold mb-3">¿Estás seguro?</h3>
+                <p class="text-muted mb-4">
+                    Estás a punto de eliminar al cliente <strong class="text-dark">{{ client.name }}</strong>.
+                    Esta acción no se puede deshacer y podría eliminar servicios asociados.
+                </p>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger btn-lg fw-bold">
+                            Sí, eliminar cliente
+                        </button>
+                        <a href="{% url 'client_list' %}" class="btn btn-light btn-lg">
+                            Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

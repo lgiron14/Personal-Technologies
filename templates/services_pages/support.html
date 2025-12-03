@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5 animate__animated animate__fadeIn">
+        <div class="col-lg-6">
+            <span class="badge bg-primary bg-opacity-10 text-primary mb-3">
+                <i class="bi bi-laptop me-2"></i>Soporte Técnico
+            </span>
+            <h1 class="display-4 fw-bold mb-3">Soporte Técnico Especializado</h1>
+            <p class="lead text-muted mb-4">Mantenimiento preventivo y correctivo de equipos de cómputo con respuesta
+                rápida y profesional.</p>
+            <div class="d-flex gap-3">
+                <a href="#contacto" class="btn btn-primary btn-lg">
+                    <i class="bi bi-telephone me-2"></i>Solicitar Servicio
+                </a>
+                <a href="#planes" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-card-checklist me-2"></i>Ver Planes
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" alt="Soporte Técnico"
+                class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4 text-center">
+                    <div class="bg-primary bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="bi bi-clock-history text-primary fs-1"></i>
+                    </div>
+                    <h4>Respuesta Rápida</h4>
+                    <p class="text-muted">Atención en menos de 2 horas para clientes con contrato. Soporte remoto
+                        inmediato.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4 text-center">
+                    <div class="bg-success bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="bi bi-tools text-success fs-1"></i>
+                    </div>
+                    <h4>Mantenimiento Preventivo</h4>
+                    <p class="text-muted">Revisiones programadas para evitar fallas. Limpieza, actualización y
+                        optimización.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4 text-center">
+                    <div class="bg-warning bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="bi bi-shield-check text-warning fs-1"></i>
+                    </div>
+                    <h4>Garantía de Servicio</h4>
+                    <p class="text-muted">30 días de garantía en todas las reparaciones. Repuestos originales
+                        certificados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services List -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">¿Qué Incluye Nuestro Soporte?</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Diagnóstico y Reparación:</strong> Identificación y solución de fallas de hardware y
+                        software
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Limpieza Profunda:</strong> Mantenimiento físico de equipos, limpieza de polvo y pasta
+                        térmica
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Actualización de Software:</strong> Instalación de sistemas operativos, drivers y
+                        aplicaciones
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Eliminación de Virus:</strong> Limpieza completa de malware, spyware y amenazas
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Optimización:</strong> Mejora del rendimiento y velocidad del equipo
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Respaldo de Datos:</strong> Backup y recuperación de información importante
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Instalación de Hardware:</strong> Memoria RAM, discos duros, tarjetas gráficas
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Soporte Remoto:</strong> Asistencia a distancia para problemas de software
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Plans -->
+    <div id="planes" class="mb-5">
+        <h2 class="text-center mb-4">Planes de Soporte</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title">Servicio Único</h4>
+                        <div class="display-6 fw-bold text-primary my-3">$80.000</div>
+                        <p class="text-muted">Por servicio</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Diagnóstico incluido</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Reparación básica</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>30 días garantía</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Soporte presencial</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-outline-primary w-100">Solicitar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-primary border-3 shadow">
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary mb-2">Más Popular</span>
+                        <h4 class="card-title">Plan Mensual</h4>
+                        <div class="display-6 fw-bold text-primary my-3">$250.000</div>
+                        <p class="text-muted">Por mes</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Soporte ilimitado</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Respuesta en 2 horas</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Mantenimiento preventivo</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Soporte remoto 24/7</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Descuento en repuestos</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-primary w-100">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title">Plan Empresarial</h4>
+                        <div class="display-6 fw-bold text-primary my-3">Personalizado</div>
+                        <p class="text-muted">Según necesidades</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Múltiples equipos</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Técnico dedicado</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>SLA personalizado</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Reportes mensuales</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Inventario de equipos</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-outline-primary w-100">Cotizar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div id="contacto" class="text-center p-5 bg-primary bg-opacity-10 rounded mb-5">
+        <h3 class="mb-3">¿Necesitas Soporte Técnico?</h3>
+        <p class="text-muted mb-4">Contáctanos y un técnico te atenderá de inmediato</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="tel:+573127948493" class="btn btn-primary btn-lg">
+                <i class="bi bi-telephone me-2"></i>312 794 84 93
+            </a>
+            <a href="mailto:contacto@personaltech.com.co" class="btn btn-outline-primary btn-lg">
+                <i class="bi bi-envelope me-2"></i>Enviar Email
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

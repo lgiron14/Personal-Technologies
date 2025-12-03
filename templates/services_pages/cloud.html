@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5 animate__animated animate__fadeIn">
+        <div class="col-lg-6">
+            <span class="badge bg-primary bg-opacity-10 text-primary mb-3">
+                <i class="bi bi-cloud me-2"></i>Soluciones Cloud
+            </span>
+            <h1 class="display-4 fw-bold mb-3">Migración a la Nube</h1>
+            <p class="lead text-muted mb-4">Lleva tu empresa a la nube con Microsoft Azure, AWS o Google Cloud.
+                Reducción de costos y mayor flexibilidad.</p>
+            <a href="#contacto" class="btn btn-primary btn-lg">
+                <i class="bi bi-cloud-arrow-up me-2"></i>Migrar a la Nube
+            </a>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Cloud"
+                class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- Cloud Providers -->
+    <div class="text-center mb-5">
+        <h3 class="mb-4">Certificados en las Principales Plataformas</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="bi bi-microsoft text-primary" style="font-size: 3rem;"></i>
+                        <h5 class="mt-3">Microsoft Azure</h5>
+                        <p class="text-muted small">Certificación Azure Administrator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="bi bi-amazon text-warning" style="font-size: 3rem;"></i>
+                        <h5 class="mt-3">Amazon AWS</h5>
+                        <p class="text-muted small">AWS Solutions Architect</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="bi bi-google text-danger" style="font-size: 3rem;"></i>
+                        <h5 class="mt-3">Google Cloud</h5>
+                        <p class="text-muted small">GCP Cloud Engineer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">Servicios Cloud</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5><i class="bi bi-arrow-up-circle text-primary me-2"></i>Migración a la Nube</h5>
+                        <p class="text-muted">Movemos tus aplicaciones y datos a la nube de forma segura. Análisis de
+                            viabilidad, planificación y ejecución.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5><i class="bi bi-hdd-stack text-success me-2"></i>Infraestructura como Servicio</h5>
+                        <p class="text-muted">Servidores virtuales, almacenamiento y redes en la nube. Escalabilidad
+                            automática según demanda.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5><i class="bi bi-shield-lock text-warning me-2"></i>Backup en la Nube</h5>
+                        <p class="text-muted">Respaldos automáticos cifrados. Recuperación ante desastres garantizada.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5><i class="bi bi-speedometer text-info me-2"></i>Optimización de Costos</h5>
+                        <p class="text-muted">Análisis y reducción de gastos cloud. Dimensionamiento correcto de
+                            recursos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits -->
+    <div class="bg-light rounded p-5 mb-5">
+        <h3 class="mb-4">Beneficios de la Nube</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Reducción de Costos:</strong> Paga solo por lo que usas
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Escalabilidad:</strong> Crece o reduce recursos al instante
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Acceso Remoto:</strong> Trabaja desde cualquier lugar
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Alta Disponibilidad:</strong> 99.9% de uptime garantizado
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Seguridad:</strong> Centros de datos certificados
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <strong>Actualizaciones:</strong> Siempre con la última tecnología
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div id="contacto" class="text-center p-5 bg-primary bg-opacity-10 rounded mb-5">
+        <h3 class="mb-3">¿Listo para la Transformación Digital?</h3>
+        <p class="text-muted mb-4">Agenda una consultoría gratuita sobre migración a la nube</p>
+        <a href="tel:+573127948493" class="btn btn-primary btn-lg">
+            <i class="bi bi-telephone me-2"></i>312 794 84 93
+        </a>
+    </div>
+</div>
+{% endblock %}

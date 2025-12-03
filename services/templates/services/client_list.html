@@ -3,35 +3,88 @@
 {% block title %}Lista de Clientes{% endblock %}
 
 {% block content %}
-<h1>Lista de Clientes</h1>
-<a href="{% url 'client_create' %}" class="btn btn-primary mb-3"><i class="bi bi-plus-circle me-2"></i>Crear Cliente</a>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Teléfono</th>
-            <th>Tipo</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for client in clients %}
-        <tr>
-            <td>{{ client.name }}</td>
-            <td>{{ client.email }}</td>
-            <td>{{ client.phone }}</td>
-            <td>{{ client.get_type_display }}</td>
-            <td>
-                <a href="{% url 'client_update' client.pk %}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
-                <a href="{% url 'client_delete' client.pk %}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a>
-            </td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="5">No hay clientes registrados.</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="row mb-4 animate__animated animate__fadeInDown">
+    <div class="col-md-8">
+        <h2 class="fw-bold text-primary"><i class="bi bi-people-fill me-2"></i>Gestión de Clientes</h2>
+        <p class="text-muted">Administra la información de tus clientes y sus servicios.</p>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="{% url 'client_create' %}" class="btn btn-premium">
+            <i class="bi bi-plus-lg me-2"></i>Nuevo Cliente
+        </a>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm animate__animated animate__fadeInUp">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light">
+                    <tr>
+                        <th class="ps-4 py-3">Nombre / Empresa</th>
+                        <th class="py-3">Contacto</th>
+                        <th class="py-3">Tipo</th>
+                        <th class="py-3 text-end pe-4">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <td class="ps-4">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-circle bg-primary bg-opacity-10 text-primary me-3 rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
+                                    {{ client.name|slice:":1"|upper }}
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">{{ client.name }}</h6>
+                                    <small class="text-muted">{{ client.company|default:"Particular" }}</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex flex-column">
+                                <span><i class="bi bi-envelope me-2 text-muted"></i>{{ client.email }}</span>
+                                <small class="text-muted"><i class="bi bi-telephone me-2"></i>{{ client.phone }}</small>
+                            </div>
+                        </td>
+                        <td>
+                            {% if client.type == 'contract' %}
+                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill">Contrato
+                                TI</span>
+                            {% else %}
+                            <span class="badge bg-info bg-opacity-10 text-info px-3 py-2 rounded-pill">Servicio
+                                Puntual</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-end pe-4">
+                            <div class="btn-group">
+                                <a href="{% url 'client_update' client.pk %}" class="btn btn-light btn-sm text-primary"
+                                    title="Editar">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="{% url 'client_delete' client.pk %}" class="btn btn-light btn-sm text-danger"
+                                    title="Eliminar">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center py-5">
+                            <div class="text-muted">
+                                <i class="bi bi-inbox fs-1 d-block mb-3"></i>
+                                <p>No hay clientes registrados aún.</p>
+                                <a href="{% url 'client_create' %}" class="btn btn-outline-primary btn-sm">Crear el
+                                    primero</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

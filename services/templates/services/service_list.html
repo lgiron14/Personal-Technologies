@@ -3,35 +3,113 @@
 {% block title %}Lista de Servicios{% endblock %}
 
 {% block content %}
-<h1>Lista de Servicios</h1>
-<a href="{% url 'service_create' %}" class="btn btn-primary mb-3"><i class="bi bi-plus-circle me-2"></i>Crear Servicio</a>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Título</th>
-            <th>Cliente</th>
-            <th>Técnico</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for service in services %}
-        <tr>
-            <td>{{ service.title }}</td>
-            <td>{{ service.client.name }}</td>
-            <td>{% if service.technician %}{{ service.technician.get_full_name|default:service.technician.username }}{% else %}No asignado{% endif %}</td>
-            <td>{{ service.get_status_display }}</td>
-            <td>
-                <a href="{% url 'service_update' service.pk %}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
-                <a href="{% url 'service_delete' service.pk %}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a>
-            </td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="5">No hay servicios registrados.</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="row mb-4 animate__animated animate__fadeInDown">
+    <div class="col-md-8">
+        <h2 class="fw-bold text-primary"><i class="bi bi-tools me-2"></i>Gestión de Servicios</h2>
+        <p class="text-muted">Administra las solicitudes de servicio y reparaciones.</p>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="{% url 'service_create' %}" class="btn btn-premium">
+            <i class="bi bi-plus-lg me-2"></i>Nuevo Servicio
+        </a>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm animate__animated animate__fadeInUp">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light">
+                    <tr>
+                        <th class="ps-4 py-3">Servicio</th>
+                        <th class="py-3">Fecha</th>
+                        <th class="py-3">Cliente</th>
+                        <th class="py-3">Técnico</th>
+                        <th class="py-3">Estado</th>
+                        <th class="py-3 text-end pe-4">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for service in services %}
+                    <tr>
+                        <td class="ps-4">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                    <i class="bi bi-pc-display fs-5"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">{{ service.title }}</h6>
+                                    <small class="text-muted">ID: #{{ service.id }}</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            {% if service.service_date %}
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-calendar-event text-primary me-2"></i>
+                                <span>{{ service.service_date|date:"d/m/Y" }}</span>
+                            </div>
+                            {% else %}
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary">Sin fecha</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ service.client.name }}</td>
+                        <td>
+                            {% if service.technician %}
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-circle bg-secondary bg-opacity-10 text-secondary me-2 rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width: 30px; height: 30px; font-size: 0.8rem;">
+                                    {{ service.technician.username|slice:":1"|upper }}
+                                </div>
+                                <span>{{ service.technician.get_full_name|default:service.technician.username }}</span>
+                            </div>
+                            {% else %}
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary">No asignado</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if service.status == 'pending' %}
+                            <span
+                                class="badge bg-warning bg-opacity-10 text-warning px-3 py-2 rounded-pill">Pendiente</span>
+                            {% elif service.status == 'in_progress' %}
+                            <span class="badge bg-info bg-opacity-10 text-info px-3 py-2 rounded-pill">En
+                                Progreso</span>
+                            {% elif service.status == 'completed' %}
+                            <span
+                                class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill">Completado</span>
+                            {% else %}
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 rounded-pill">{{
+                                service.get_status_display }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-end pe-4">
+                            <div class="btn-group">
+                                <a href="{% url 'service_update' service.pk %}"
+                                    class="btn btn-light btn-sm text-primary" title="Editar">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="{% url 'service_delete' service.pk %}" class="btn btn-light btn-sm text-danger"
+                                    title="Eliminar">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center py-5">
+                            <div class="text-muted">
+                                <i class="bi bi-tools fs-1 d-block mb-3"></i>
+                                <p>No hay servicios registrados aún.</p>
+                                <a href="{% url 'service_create' %}" class="btn btn-outline-primary btn-sm">Crear el
+                                    primero</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

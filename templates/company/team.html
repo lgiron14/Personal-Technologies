@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="text-center mb-5 animate__animated animate__fadeIn">
+        <h1 class="display-4 fw-bold mb-3">Nuestro Equipo</h1>
+        <p class="lead text-muted">Profesionales apasionados por la tecnología y comprometidos con tu éxito</p>
+    </div>
+
+    <!-- Team Members -->
+    <div class="row g-4 mb-5">
+        <!-- Founder -->
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp">
+            <div class="card h-100 border-0 shadow-sm hover-lift">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <img src="https://ui-avatars.com/api/?name=Julio+Giron&size=120&background=007bff&color=fff&bold=true"
+                            alt="Julio César Girón" class="rounded-circle mb-3" width="120" height="120">
+                    </div>
+                    <h4 class="card-title mb-1">Julio César Girón David</h4>
+                    <p class="text-primary mb-3">Fundador & CEO</p>
+                    <p class="text-muted small">Ingeniero de Sistemas con más de 10 años de experiencia. Visionario
+                        detrás de Personal Technology, apasionado por llevar soluciones tecnológicas a las empresas
+                        paisas.</p>
+                    <div class="mt-3">
+                        <span class="badge bg-primary bg-opacity-10 text-primary me-1">Liderazgo</span>
+                        <span class="badge bg-primary bg-opacity-10 text-primary me-1">Estrategia</span>
+                        <span class="badge bg-primary bg-opacity-10 text-primary">Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Lead -->
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <div class="card h-100 border-0 shadow-sm hover-lift">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <img src="https://ui-avatars.com/api/?name=Maria+Rodriguez&size=120&background=28a745&color=fff&bold=true"
+                            alt="María Rodríguez" class="rounded-circle mb-3" width="120" height="120">
+                    </div>
+                    <h4 class="card-title mb-1">María Rodríguez</h4>
+                    <p class="text-success mb-3">Líder Técnico</p>
+                    <p class="text-muted small">Especialista en infraestructura de redes y ciberseguridad. Certificada
+                        en CCNA y CompTIA Security+. Lidera nuestro equipo de soporte técnico con excelencia.</p>
+                    <div class="mt-3">
+                        <span class="badge bg-success bg-opacity-10 text-success me-1">Redes</span>
+                        <span class="badge bg-success bg-opacity-10 text-success me-1">Seguridad</span>
+                        <span class="badge bg-success bg-opacity-10 text-success">CCNA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Developer Lead -->
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <div class="card h-100 border-0 shadow-sm hover-lift">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <img src="https://ui-avatars.com/api/?name=Carlos+Mejia&size=120&background=6f42c1&color=fff&bold=true"
+                            alt="Carlos Mejía" class="rounded-circle mb-3" width="120" height="120">
+                    </div>
+                    <h4 class="card-title mb-1">Carlos Mejía</h4>
+                    <p class="text-purple mb-3" style="color: #6f42c1;">Líder de Desarrollo</p>
+                    <p class="text-muted small">Full Stack Developer con experiencia en Python, Django y React.
+                        Arquitecto de soluciones personalizadas que transforman negocios.</p>
+                    <div class="mt-3">
+                        <span class="badge bg-opacity-10 me-1"
+                            style="background-color: #6f42c1; color: #6f42c1;">Python</span>
+                        <span class="badge bg-opacity-10 me-1"
+                            style="background-color: #6f42c1; color: #6f42c1;">Django</span>
+                        <span class="badge bg-opacity-10"
+                            style="background-color: #6f42c1; color: #6f42c1;">React</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Specialist -->
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <div class="card h-100 border-0 shadow-sm hover-lift">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <img src="https://ui-avatars.com/api/?name=Ana+Gomez&size=120&background=fd7e14&color=fff&bold=true"
+                            alt="Ana Gómez" class="rounded-circle mb-3" width="120" height="120">
+                    </div>
+                    <h4 class="card-title mb-1">Ana Gómez</h4>
+                    <p class="text-warning mb-3">Especialista en Soporte</p>
+                    <p class="text-muted small">Técnica en sistemas con certificación en atención al cliente. Garantiza
+                        que cada cliente reciba el mejor servicio y soluciones rápidas.</p>
+                    <div class="mt-3">
+                        <span class="badge bg-warning bg-opacity-10 text-warning me-1">Soporte</span>
+                        <span class="badge bg-warning bg-opacity-10 text-warning me-1">Hardware</span>
+                        <span class="badge bg-warning bg-opacity-10 text-warning">Servicio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cloud Specialist -->
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+            <div class="card h-100 border-0 shadow-sm hover-lift">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <img src="https://ui-avatars.com/api/?name=David+Henao&size=120&background=17a2b8&color=fff&bold=true"
+                            alt="David Henao" class="rounded-circle mb-3" width="120" height="120">
+                    </div>
+                    <h4 class="card-title mb-1">David Henao</h4>
+                    <p class="text-info mb-3">Especialista Cloud</p>
+                    <p class="text-muted small">Certificado en Microsoft Azure y AWS. Experto en migración a la nube y
+                        optimización de infraestructura cloud para empresas.</p>
+                    <div class="mt-3">
+                        <span class="badge bg-info bg-opacity-10 text-info me-1">Azure</span>
+                        <span class="badge bg-info bg-opacity-10 text-info me-1">AWS</span>
+                        <span class="badge bg-info bg-opacity-10 text-info">DevOps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business Analyst -->
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+            <div class="card h-100 border-0 shadow-sm hover-lift">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <img src="https://ui-avatars.com/api/?name=Laura+Restrepo&size=120&background=dc3545&color=fff&bold=true"
+                            alt="Laura Restrepo" class="rounded-circle mb-3" width="120" height="120">
+                    </div>
+                    <h4 class="card-title mb-1">Laura Restrepo</h4>
+                    <p class="text-danger mb-3">Analista de Negocios</p>
+                    <p class="text-muted small">Administradora de empresas especializada en transformación digital.
+                        Conecta las necesidades del negocio con soluciones tecnológicas efectivas.</p>
+                    <div class="mt-3">
+                        <span class="badge bg-danger bg-opacity-10 text-danger me-1">Consultoría</span>
+                        <span class="badge bg-danger bg-opacity-10 text-danger me-1">Análisis</span>
+                        <span class="badge bg-danger bg-opacity-10 text-danger">Estrategia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Team CTA -->
+    <div class="text-center p-5 bg-gradient rounded"
+        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <h3 class="text-white mb-3">¿Quieres unirte a nuestro equipo?</h3>
+        <p class="text-white mb-4">Estamos buscando talento paisa apasionado por la tecnología</p>
+        <a href="{% url 'home' %}" class="btn btn-light btn-lg"><i class="bi bi-briefcase me-2"></i>Ver Vacantes</a>
+    </div>
+</div>
+
+<style>
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    }
+</style>
+{% endblock %}

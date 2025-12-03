@@ -1,70 +1,177 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Inicio - Personal Technology{% endblock %}
 
 {% block content %}
-<header class="bg-light py-5">
-    <div class="row">
-        <div class="col-lg-6">
-            <h1 class="display-4">Bienvenido a Personal Technology</h1>
-            <p class="lead">Expertos en servicios de TI: asesoría, diseño web, configuración de servidores y mantenimiento.</p>
-            <a href="#contact" class="btn btn-primary btn-lg">Solicitar Servicio</a>
-        </div>
-        <div class="col-lg-6">
-            <img src="https://via.placeholder.com/500x300" alt="Servicios de TI" class="img-fluid rounded">
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-shape"></div>
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                <h1 class="hero-title">Soluciones Tecnológicas <br> a tu Medida</h1>
+                <p class="hero-subtitle">Transformamos tus problemas técnicos en soluciones eficientes. Expertos en
+                    soporte, mantenimiento y desarrollo web.</p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'service_create' %}" class="btn btn-premium">Solicitar Servicio</a>
+                    <a href="#services" class="btn btn-outline-primary rounded-pill px-4 py-2 fw-bold">Ver Servicios</a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block animate__animated animate__fadeInRight">
+                <img src="https://img.freepik.com/free-vector/server-status-concept-illustration_114360-541.jpg"
+                    alt="Tech Services" class="img-fluid" style="mix-blend-mode: multiply;">
+            </div>
         </div>
     </div>
-</header>
+</section>
 
-<section id="services" class="py-5">
-    <h2 class="text-center mb-4">Nuestros Servicios</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Asesoría en TI</h5>
-                    <p class="card-text">Consultoría especializada para optimizar sus sistemas tecnológicos.</p>
-                </div>
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 stat-item animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Clientes Felices</div>
+            </div>
+            <div class="col-md-3 stat-item animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="stat-number">1.2k</div>
+                <div class="stat-label">Reparaciones</div>
+            </div>
+            <div class="col-md-3 stat-item animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Soporte Activo</div>
+            </div>
+            <div class="col-md-3 stat-item animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Garantía</div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Diseño Web</h5>
-                    <p class="card-text">Sitios web modernos y responsivos para su negocio.</p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mb-5 animate__animated animate__fadeInUp">
+            <h6 class="text-primary fw-bold text-uppercase">Nuestros Servicios</h6>
+            <h2 class="display-5 fw-bold">¿En qué podemos ayudarte?</h2>
+        </div>
+        <div class="row g-4">
+            <!-- Service 1 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-pc-display"></i>
+                    </div>
+                    <h3 class="service-title">Soporte Técnico</h3>
+                    <p class="text-muted">Diagnóstico y reparación de equipos de cómputo. Mantenimiento preventivo y
+                        correctivo para hardware y software.</p>
+                    <a href="#" class="text-decoration-none fw-bold">Leer más <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Mantenimiento</h5>
-                    <p class="card-text">Servicio continuo de mantenimiento y soporte técnico.</p>
+            <!-- Service 2 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h3 class="service-title">Desarrollo Web</h3>
+                    <p class="text-muted">Diseño y desarrollo de sitios web modernos, responsivos y optimizados para
+                        SEO. Tiendas virtuales y landing pages.</p>
+                    <a href="#" class="text-decoration-none fw-bold">Leer más <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-hdd-network"></i>
+                    </div>
+                    <h3 class="service-title">Redes y Servidores</h3>
+                    <p class="text-muted">Instalación y configuración de redes cableadas e inalámbricas. Administración
+                        de servidores y copias de seguridad.</p>
+                    <a href="#" class="text-decoration-none fw-bold">Leer más <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="bg-light py-5">
-    <h2 class="text-center mb-4">Contáctenos</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name">
+<!-- CTA Section -->
+<section class="py-5 bg-white">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card bg-primary text-white border-0 rounded-4 overflow-hidden shadow-lg">
+                    <div class="card-body p-5 text-center position-relative">
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background: linear-gradient(45deg, rgba(0,0,0,0.2), transparent);"></div>
+                        <h2 class="fw-bold mb-4 position-relative z-1">¿Listo para optimizar tu tecnología?</h2>
+                        <p class="lead mb-4 position-relative z-1">Contáctanos hoy mismo y recibe una asesoría gratuita
+                            para tu primer servicio.</p>
+                        <a href="{% url 'client_create' %}"
+                            class="btn btn-light btn-lg rounded-pill px-5 fw-bold position-relative z-1">Registrarme
+                            Ahora</a>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Preview -->
+<section id="contact" class="py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="display-6 fw-bold mb-4">Contáctanos</h2>
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3 text-primary">
+                        <i class="bi bi-geo-alt fs-4"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-0">Ubicación</h5>
+                        <p class="text-muted mb-0">Calle 123 # 45-67, Ciudad</p>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="message" rows="3"></textarea>
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3 text-primary">
+                        <i class="bi bi-envelope fs-4"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-0">Email</h5>
+                        <p class="text-muted mb-0">contacto@personaltech.com</p>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
+                <div class="d-flex align-items-center">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3 text-primary">
+                        <i class="bi bi-telephone fs-4"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-0">Teléfono</h5>
+                        <p class="text-muted mb-0">+57 300 123 4567</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form class="p-4 bg-white rounded-4 shadow-sm border">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control bg-light border-0 py-3" placeholder="Tu nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control bg-light border-0 py-3" placeholder="tu@email.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mensaje</label>
+                        <textarea class="form-control bg-light border-0 py-3" rows="4"
+                            placeholder="¿En qué podemos ayudarte?"></textarea>
+                    </div>
+                    <button class="btn btn-primary w-100 py-3 fw-bold rounded-3">Enviar Mensaje</button>
+                </form>
+            </div>
         </div>
     </div>
 </section>

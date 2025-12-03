@@ -3,35 +3,109 @@
 {% block title %}Lista de Reportes Técnicos{% endblock %}
 
 {% block content %}
-<h1>Lista de Reportes Técnicos</h1>
-<a href="{% url 'report_create' %}" class="btn btn-primary mb-3"><i class="bi bi-plus-circle me-2"></i>Crear Reporte</a>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Servicio</th>
-            <th>Técnico</th>
-            <th>Fecha</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for report in reports %}
-        <tr>
-            <td>{{ report.service.title }}</td>
-            <td>{% if report.technician %}{{ report.technician.get_full_name|default:report.technician.username }}{% else %}N/A{% endif %}</td>
-            <td>{{ report.date|date:"d/m/Y" }}</td>
-            <td>{{ report.get_status_display }}</td>
-            <td>
-                <a href="{% url 'report_update' report.pk %}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
-                <a href="{% url 'report_delete' report.pk %}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a>
-            </td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="5">No hay reportes registrados.</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="row mb-4 animate__animated animate__fadeInDown">
+    <div class="col-md-8">
+        <h2 class="fw-bold text-primary"><i class="bi bi-file-earmark-text me-2"></i>Reportes Técnicos</h2>
+        <p class="text-muted">Genera y administra los informes técnicos de los servicios.</p>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="{% url 'report_create' %}" class="btn btn-premium">
+            <i class="bi bi-plus-lg me-2"></i>Nuevo Reporte
+        </a>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm animate__animated animate__fadeInUp">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light">
+                    <tr>
+                        <th class="ps-4 py-3">Servicio</th>
+                        <th class="py-3">Técnico</th>
+                        <th class="py-3">Fecha</th>
+                        <th class="py-3">Estado</th>
+                        <th class="py-3 text-end pe-4">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for report in reports %}
+                    <tr>
+                        <td class="ps-4">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-success bg-opacity-10 text-success rounded p-2 me-3">
+                                    <i class="bi bi-file-text fs-5"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">
+                                        {{ report.service.title }}
+                                        {% if report.service.client.company %} | {{ report.service.client.company }}{% endif %}
+                                        {% if report.service.service_date %} | Fecha servicio: {{ report.service.service_date|date:"d/m/Y" }}{% endif %}
+                                    </h6>
+                                    <small class="text-muted">Reporte #{{ report.id }}</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            {% if report.technician %}
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-circle bg-secondary bg-opacity-10 text-secondary me-2 rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width: 30px; height: 30px; font-size: 0.8rem;">
+                                    {{ report.technician.username|slice:":1"|upper }}
+                                </div>
+                                <span>{{ report.technician.get_full_name|default:report.technician.username }}</span>
+                            </div>
+                            {% else %}
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary">N/A</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ report.date|date:"d/m/Y" }}</td>
+                        <td>
+                            {% if report.status == 'draft' %}
+                            <span
+                                class="badge bg-warning bg-opacity-10 text-warning px-3 py-2 rounded-pill">Borrador</span>
+                            {% elif report.status == 'final' %}
+                            <span
+                                class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill">Finalizado</span>
+                            {% else %}
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 rounded-pill">{{ report.get_status_display }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-end pe-4">
+                            <div class="btn-group">
+                                <a href="{% url 'generate_pdf' report.pk %}" class="btn btn-light btn-sm text-danger"
+                                    title="Ver PDF" target="_blank">
+                                    <i class="bi bi-file-pdf"></i>
+                                </a>
+                                <a href="{% url 'send_report_email' report.pk %}"
+                                    class="btn btn-light btn-sm text-primary" title="Enviar por Email">
+                                    <i class="bi bi-envelope"></i>
+                                </a>
+                                <a href="{% url 'report_update' report.pk %}" class="btn btn-light btn-sm text-warning"
+                                    title="Editar">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="{% url 'report_delete' report.pk %}" class="btn btn-light btn-sm text-danger"
+                                    title="Eliminar">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center py-5">
+                            <div class="text-muted">
+                                <i class="bi bi-file-earmark-x fs-1 d-block mb-3"></i>
+                                <p>No hay reportes registrados aún.</p>
+                                <a href="{% url 'report_create' %}" class="btn btn-outline-primary btn-sm">Crear el primero</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}
